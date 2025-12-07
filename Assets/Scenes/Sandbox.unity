@@ -1111,6 +1111,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c6a55ba99e9e99d41b7eef123e311a43, type: 3}
   m_PrefabInstance: {fileID: 696088357}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &748017041 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 289926673448561696, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+  m_PrefabInstance: {fileID: 1506716174375662936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &758147127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1881,13 +1886,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1601361727}
   m_SourcePrefab: {fileID: 100100000, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
 --- !u!4 &1601361725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
   m_PrefabInstance: {fileID: 1601361724}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1601361726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
+  m_PrefabInstance: {fileID: 1601361724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601361727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601361726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9d1ae8ec3b24f4c98eedf38d387097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  FPCamera: {fileID: 748017041}
+  range: 100
+  fireRate: 0.1
 --- !u!1001 &1701430461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2334,6 +2362,14 @@ PrefabInstance:
     - target: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519760898700222653, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519760898700222653, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_LocalPosition.x
