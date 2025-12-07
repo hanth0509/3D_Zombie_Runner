@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 945987265172937739}
   - component: {fileID: 5373738743274476189}
   - component: {fileID: 7465075391593075512}
+  - component: {fileID: 5399793683830625241}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -241,7 +242,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -262,3 +263,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
+  chaseRange: 10
+--- !u!114 &5399793683830625241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202932972639811760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42457d8f0b46683458b8b7b2dba72b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  hitPoints: 100
