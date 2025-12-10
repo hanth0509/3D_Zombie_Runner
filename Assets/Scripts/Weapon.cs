@@ -18,6 +18,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     ParticleSystem muzzleFlash;
+
+    [SerializeField]
+    GameObject hitEffect;
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
@@ -87,8 +90,8 @@ public class Weapon : MonoBehaviour
             Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range)
         )
         {
-            Debug.Log("I think this thing: " + hit.transform.name);
-            //TODO :Add some hit effect for visual players
+            // Debug.Log("I think this thing: " + hit.transform.name);
+            CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null)
                 return false;
@@ -100,5 +103,11 @@ public class Weapon : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 0.1f);
     }
 }

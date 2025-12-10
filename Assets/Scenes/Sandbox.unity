@@ -2000,6 +2000,7 @@ MonoBehaviour:
   fireRate: 0.1
   damage: 30
   muzzleFlash: {fileID: 1299692532}
+  hitEffect: {fileID: 8724635939219499941, guid: 3f31a2d7ca049ac4ea7c97fe68fc81d4, type: 3}
 --- !u!1001 &1701430461
 PrefabInstance:
   m_ObjectHideFlags: 0
