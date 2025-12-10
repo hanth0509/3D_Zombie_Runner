@@ -1,18 +1,32 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] Camera FPCamera;
-    [SerializeField] float range = 100f;
-    [SerializeField] private float fireRate = 0.1f; // 0.1s = 10 viên/s
-    [SerializeField] float damage = 30f;
+    [SerializeField]
+    Camera FPCamera;
+
+    [SerializeField]
+    float range = 100f;
+
+    [SerializeField]
+    private float fireRate = 0.1f; // 0.1s = 10 viên/s
+
+    [SerializeField]
+    float damage = 30f;
+
+    [SerializeField]
+    ParticleSystem muzzleFlash;
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
+
     private void Awake()
     {
         inputs = new MyInputs();
     }
+
     private void OnEnable()
     {
         inputs.Enable();
@@ -26,6 +40,7 @@ public class Weapon : MonoBehaviour
         inputs.Player.Shoot.canceled -= OnShootCanceled;
         inputs.Disable();
     }
+
     private void Update()
     {
         if (isShooting && Time.time >= nextFireTime)
@@ -34,6 +49,7 @@ public class Weapon : MonoBehaviour
             nextFireTime = Time.time + fireRate;
         }
     }
+
     private void OnShootStarted(InputAction.CallbackContext ctx)
     {
         isShooting = true;
@@ -43,24 +59,46 @@ public class Weapon : MonoBehaviour
     {
         isShooting = false;
     }
+
     private void OnShoot(InputAction.CallbackContext ctx)
     {
         Shoot();
     }
+
     private void Shoot()
     {
+        PlayMuzzleFlash();
+        bool flowControl = ProcessRaycast();
+        if (!flowControl)
+        {
+            return;
+        }
+    }
+
+    private void PlayMuzzleFlash()
+    {
+        muzzleFlash.Play();
+    }
+
+    private bool ProcessRaycast()
+    {
         RaycastHit hit;
-        if(Physics.Raycast(FPCamera.transform.position,FPCamera.transform.forward,out hit,range))
-        { 
-            Debug.Log("I think this thing: "+ hit.transform.name);
-            //TODO :Add some hit effect for visual players 
+        if (
+            Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range)
+        )
+        {
+            Debug.Log("I think this thing: " + hit.transform.name);
+            //TODO :Add some hit effect for visual players
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;
+            if (target == null)
+                return false;
             target.TakeDamage(damage);
         }
         else
         {
-           return;
+            return false;
         }
+
+        return true;
     }
 }
