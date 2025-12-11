@@ -2355,6 +2355,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5495454633994339055, guid: fce3bf5a5b603db45ab0048fb6ab44df, type: 3}
+--- !u!1 &2122646125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1202932972639811760, guid: ee4696f29ca7e134f93a0470800115e3, type: 3}
+  m_PrefabInstance: {fileID: 1018317132156792939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122646134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122646125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c23bbc4642024144a66af11262ad8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  target: {fileID: 8997996947708406718}
+  damage: 40
 --- !u!1001 &1018317132156792939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2407,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5605729943659679663, guid: ee4696f29ca7e134f93a0470800115e3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7465075391593075512, guid: ee4696f29ca7e134f93a0470800115e3, type: 3}
       propertyPath: target
       value: 
@@ -2414,7 +2437,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1202932972639811760, guid: ee4696f29ca7e134f93a0470800115e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2122646134}
   m_SourcePrefab: {fileID: 100100000, guid: ee4696f29ca7e134f93a0470800115e3, type: 3}
 --- !u!1001 &1506716174375662936
 PrefabInstance:

@@ -57,10 +57,7 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Animator>().SetBool("attack", true);
         Debug.Log(name + " has attacked and detroying " + target.name);
     }
-    public void HandleAnimationEvent()
-    {
-        // None
-    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
