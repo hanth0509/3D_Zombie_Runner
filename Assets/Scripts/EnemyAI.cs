@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float chaseRange = 5f;
+    [SerializeField]
+    Transform target;
+
+    [SerializeField]
+    float chaseRange = 5f;
     UnityEngine.AI.NavMeshAgent navMeshAgent;
-    float distanceToTarget = Mathf.Infinity; 
+    float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false; // The enemy is provoked
+
     void Start()
     {
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class EnemyAI : MonoBehaviour
             // navMeshAgent.SetDestination(target.position);
         }
     }
+
     private void EngageTarget()
     {
         // FaceTarget();
@@ -40,14 +44,22 @@ public class EnemyAI : MonoBehaviour
             AttackTarget();
         }
     }
+
     private void ChaseTarget()
     {
+        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
     }
+
     private void AttackTarget()
     {
-        // GetComponent<Animator>().SetBool("attack", true);
+        GetComponent<Animator>().SetBool("attack", true);
         Debug.Log(name + " has attacked and detroying " + target.name);
+    }
+    public void HandleAnimationEvent()
+    {
+        // None
     }
     void OnDrawGizmosSelected()
     {

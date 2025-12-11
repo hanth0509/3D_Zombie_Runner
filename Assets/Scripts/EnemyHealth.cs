@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float hitPoints = 100f;
+    [SerializeField]
+    private float hitPoints = 100f;
+
     public void TakeDamage(float damage)
     {
         hitPoints -= damage;
@@ -11,6 +13,4 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
