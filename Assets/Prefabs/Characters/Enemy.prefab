@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 7465075391593075512}
   - component: {fileID: 5399793683830625241}
   - component: {fileID: 5605729943659679663}
+  - component: {fileID: 7971160033950975065}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -265,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
   chaseRange: 10
+  turnSpeed: 5
 --- !u!114 &5399793683830625241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,3 +302,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7971160033950975065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202932972639811760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c23bbc4642024144a66af11262ad8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damage: 40
