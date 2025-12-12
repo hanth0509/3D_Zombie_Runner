@@ -1302,7 +1302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 132.03687}
+  m_AnchoredPosition: {x: 0, y: 114}
   m_SizeDelta: {x: 409.0328, y: 97.9262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681951449
@@ -2550,7 +2550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3709, y: 26}
+  m_AnchoredPosition: {x: -1.3709, y: 17}
   m_SizeDelta: {x: 252.1183, y: 68.382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666494528
@@ -3346,13 +3346,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1496292415712181265, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1601361725}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8997996947708406719}
   m_SourcePrefab: {fileID: 100100000, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+--- !u!1 &1506716174375662937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+  m_PrefabInstance: {fileID: 1506716174375662936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8997996947708406718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
   m_PrefabInstance: {fileID: 1506716174375662936}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8997996947708406719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506716174375662937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9956622824d020e40b2db2231763a878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathHandler
+  gameOverCanvas: {fileID: 422331226}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
