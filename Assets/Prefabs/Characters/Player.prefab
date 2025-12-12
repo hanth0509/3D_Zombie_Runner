@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 8519760898700222653}
   - component: {fileID: 2007665746983656343}
   - component: {fileID: 589234921543955578}
+  - component: {fileID: 484405390295555217}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -424,6 +425,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &484405390295555217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209798845599176732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9892a2146c4adb4d967913239e242ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1 &8469346837916542358
 GameObject:
   m_ObjectHideFlags: 0
