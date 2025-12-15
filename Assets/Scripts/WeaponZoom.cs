@@ -1,4 +1,5 @@
 using Cinemachine;
+using StarterAssets;
 using UnityEngine;
 
 public class WeaponZoom : MonoBehaviour
@@ -6,6 +7,13 @@ public class WeaponZoom : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private CinemachineVirtualCamera virtualCamera;
+
+    [SerializeField]
+    private FirstPersonController fpsController;
+
+    [Header("Sensitivity")]
+    [SerializeField]
+    private float zoomSensitivityMultiplier = 0.3f;
 
     [Header("FOV")]
     [SerializeField]
@@ -21,18 +29,25 @@ public class WeaponZoom : MonoBehaviour
     private MyInputs inputs;
     private bool isZooming;
 
+    private float baseRotationSpeed;
+
     private void Awake()
     {
         inputs = new MyInputs();
     }
 
+    private void Start()
+    {
+        if (fpsController == null)
+            fpsController = GetComponentInParent<FirstPersonController>();
+
+        baseRotationSpeed = fpsController.RotationSpeed;
+    }
+
     private void OnEnable()
     {
         inputs.Enable();
-
-        // GIỮ chuột
         inputs.Player.Zoom.started += OnZoomStarted;
-        // NHẢ chuột
         inputs.Player.Zoom.canceled += OnZoomCanceled;
     }
 
@@ -41,18 +56,25 @@ public class WeaponZoom : MonoBehaviour
         inputs.Player.Zoom.started -= OnZoomStarted;
         inputs.Player.Zoom.canceled -= OnZoomCanceled;
         inputs.Disable();
+
+        ResetSensitivity();
     }
 
     private void OnZoomStarted(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
-        Debug.Log("ZOOM STARTED");
         isZooming = true;
+        fpsController.RotationSpeed = baseRotationSpeed * zoomSensitivityMultiplier;
     }
 
     private void OnZoomCanceled(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
-        Debug.Log("ZOOM CANCETED");
         isZooming = false;
+        ResetSensitivity();
+    }
+
+    private void ResetSensitivity()
+    {
+        fpsController.RotationSpeed = baseRotationSpeed;
     }
 
     private void Update()
