@@ -2320,7 +2320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &422331223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7699,6 +7699,7 @@ MonoBehaviour:
   damage: 30
   muzzleFlash: {fileID: 1299692532}
   hitEffect: {fileID: 8724635939219499941, guid: 3f31a2d7ca049ac4ea7c97fe68fc81d4, type: 3}
+  ammoSlot: {fileID: 8997996947708406737}
 --- !u!114 &1612767839 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4303890407747223740, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
@@ -10152,6 +10153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8997996947708406728}
+    - targetCorrespondingSourceObject: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8997996947708406737}
   m_SourcePrefab: {fileID: 100100000, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
 --- !u!1 &1506716174375662937 stripped
 GameObject:
@@ -10194,6 +10198,19 @@ MonoBehaviour:
   zoomOutFOV: 40
   zoomInFOV: 20
   zoomSpeed: 10
+--- !u!114 &8997996947708406737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506716174375662937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a1704e2039a504990c9f736e89b4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ammo
+  ammoAmount: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

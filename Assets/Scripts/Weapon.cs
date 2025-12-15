@@ -21,6 +21,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     GameObject hitEffect;
+
+    [SerializeField]
+    Ammo ammoSlot;
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
@@ -70,12 +73,13 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        PlayMuzzleFlash();
-        bool flowControl = ProcessRaycast();
-        if (!flowControl)
-        {
+        if (ammoSlot.GetCurentAmount() <= 0)
             return;
-        }
+
+        ammoSlot.ReduceCurrentAmmo(); // Reduce ammo count by 1
+
+        PlayMuzzleFlash();
+        ProcessRaycast();
     }
 
     private void PlayMuzzleFlash()
