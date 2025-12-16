@@ -9903,6 +9903,30 @@ PrefabInstance:
       propertyPath: ammoAmount
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047584628342675838, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoAmount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6209798845599176732, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_Name
       value: Player

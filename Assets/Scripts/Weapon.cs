@@ -41,6 +41,7 @@ public class Weapon : MonoBehaviour
 
     private void OnEnable()
     {
+        canShoot = true;
         inputs.Enable();
         inputs.Player.Shoot.started += OnShootStarted;
         inputs.Player.Shoot.canceled += OnShootCanceled;
@@ -53,14 +54,14 @@ public class Weapon : MonoBehaviour
         inputs.Disable();
     }
 
-    private void Update()
-    {
-        if (isShooting && Time.time >= nextFireTime && canShoot == true)
-        {
-            StartCoroutine(Shoot());
-            nextFireTime = Time.time + fireRate;
-        }
-    }
+    // private void Update()
+    // {
+    //     if (isShooting && Time.time >= nextFireTime && canShoot == true)
+    //     {
+    //         StartCoroutine(Shoot());
+    //         nextFireTime = Time.time + fireRate;
+    //     }
+    // }
 
     private void OnShootStarted(InputAction.CallbackContext ctx)
     {
@@ -72,18 +73,18 @@ public class Weapon : MonoBehaviour
         isShooting = false;
     }
 
-    IEnumerator Shoot()
-    {
-        canShoot = false;
-        if (ammoSlot.GetCurentAmount() > 0)
-        {
-            ammoSlot.ReduceCurrentAmmo(); // Reduce ammo count by 1
-            PlayMuzzleFlash();
-            ProcessRaycast();
-        }
-        yield return new WaitForSeconds(timeBetweenShots);
-        canShoot = true;
-    }
+    // IEnumerator Shoot()
+    // {
+    //     canShoot = false;
+    //     if (ammoSlot.GetCurentAmount() > 0)
+    //     {
+    //         ammoSlot.ReduceCurrentAmmo(); // Reduce ammo count by 1
+    //         PlayMuzzleFlash();
+    //         ProcessRaycast();
+    //     }
+    //     yield return new WaitForSeconds(timeBetweenShots);
+    //     canShoot = true;
+    // }
 
     private void PlayMuzzleFlash()
     {
