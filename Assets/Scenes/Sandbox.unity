@@ -9869,7 +9869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3312432697873112692, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3349754680852205519, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: range
@@ -9954,8 +9954,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5897808242058889754, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1506716174375662938}
   m_SourcePrefab: {fileID: 100100000, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+--- !u!1 &1506716174375662937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5897808242058889754, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
+  m_PrefabInstance: {fileID: 1506716174375662936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1506716174375662938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506716174375662937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba61146769a6cc4d91c4338e9bf71db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSwitcher
+  currentWeapon: 0
 --- !u!4 &8997996947708406718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
