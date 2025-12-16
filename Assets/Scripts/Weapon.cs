@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,9 +25,14 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     Ammo ammoSlot;
+
+    [SerializeField]
+    float timeBetweenShots = 0.5f;
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
+
+    bool canShoot = true;
 
     private void Awake()
     {
@@ -49,9 +55,9 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (isShooting && Time.time >= nextFireTime)
+        if (isShooting && Time.time >= nextFireTime && canShoot == true)
         {
-            Shoot();
+            StartCoroutine(Shoot());
             nextFireTime = Time.time + fireRate;
         }
     }
@@ -71,15 +77,17 @@ public class Weapon : MonoBehaviour
         Shoot();
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
-        if (ammoSlot.GetCurentAmount() <= 0)
-            return;
-
-        ammoSlot.ReduceCurrentAmmo(); // Reduce ammo count by 1
-
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        canShoot = false;
+        if (ammoSlot.GetCurentAmount() > 0)
+        {
+            ammoSlot.ReduceCurrentAmmo(); // Reduce ammo count by 1
+            PlayMuzzleFlash();
+            ProcessRaycast();
+        }
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()

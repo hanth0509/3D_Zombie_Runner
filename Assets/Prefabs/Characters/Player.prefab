@@ -142,9 +142,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3312432697872876116}
-  - {fileID: 4538151346684401154}
   - {fileID: 2733163431773254492}
+  - {fileID: 4538151346684401154}
+  - {fileID: 3312432697872876116}
   m_Father: {fileID: 289926673448561703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6209798845599176732
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6209798845599176732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10a7e696212180d43942bab87f522ff7, type: 3}
   m_Name: 
@@ -612,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
       propertyPath: m_LocalScale.x
@@ -676,6 +676,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829092217817905841}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1408756241107263949}
   m_SourcePrefab: {fileID: 100100000, guid: b5d3572f7b6bfd143b39ce51cf6bde2e, type: 3}
 --- !u!4 &3312432697872876116 stripped
 Transform:
@@ -706,6 +709,24 @@ MonoBehaviour:
   muzzleFlash: {fileID: 2349427270734021166}
   hitEffect: {fileID: 8724635939219499941, guid: 3f31a2d7ca049ac4ea7c97fe68fc81d4, type: 3}
   ammoSlot: {fileID: 6047584628342675838}
+--- !u!114 &1408756241107263949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312432697873112692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a7e696212180d43942bab87f522ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponZoom
+  virtualCamera: {fileID: 4303890407747223740}
+  fpsController: {fileID: 0}
+  zoomSensitivityMultiplier: 0.3
+  zoomOutFOV: 40
+  zoomInFOV: 20
+  zoomSpeed: 10
 --- !u!1001 &4765821275210978759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,6 +834,10 @@ PrefabInstance:
     - target: {fileID: 4036141625600811573, guid: d321d5338ca81e6459168c032598a632, type: 3}
       propertyPath: m_Name
       value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036141625600811573, guid: d321d5338ca81e6459168c032598a632, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4779066064911785708, guid: d321d5338ca81e6459168c032598a632, type: 3}
       propertyPath: m_LocalPosition.x
