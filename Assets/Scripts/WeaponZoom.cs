@@ -56,8 +56,12 @@ public class WeaponZoom : MonoBehaviour
         inputs.Player.Zoom.started -= OnZoomStarted;
         inputs.Player.Zoom.canceled -= OnZoomCanceled;
         inputs.Disable();
-
+        isZooming = false;
         ResetSensitivity();
+        if (virtualCamera != null)
+        {
+            virtualCamera.m_Lens.FieldOfView = zoomOutFOV;
+        }
     }
 
     private void OnZoomStarted(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
