@@ -72,11 +72,6 @@ public class Weapon : MonoBehaviour
         isShooting = false;
     }
 
-    private void OnShoot(InputAction.CallbackContext ctx)
-    {
-        Shoot();
-    }
-
     IEnumerator Shoot()
     {
         canShoot = false;
