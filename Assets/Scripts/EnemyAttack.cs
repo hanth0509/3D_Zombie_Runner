@@ -15,7 +15,10 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         if (target == null)
+        {
+            Debug.Log("Player is already dead");
             return;
+        }
         target.TakeDamage(damage);
         Debug.Log("Bang bang");
     }
