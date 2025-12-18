@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 256460056}
   - component: {fileID: 256460057}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Environment_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1687632874}
+  - {fileID: 1141893806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &256460057
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 2f62b55a2cf035a429cb7edd2236f08f, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1 &410087039
 GameObject:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1687632873
+--- !u!1 &1141893805
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,38 +492,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1687632874}
-  - component: {fileID: 1687632876}
-  - component: {fileID: 1687632875}
+  - component: {fileID: 1141893806}
+  - component: {fileID: 1141893808}
+  - component: {fileID: 1141893807}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Terrain (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &1687632874
+--- !u!4 &1141893806
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687632873}
+  m_GameObject: {fileID: 1141893805}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.2, y: -51.1, z: -97.3}
+  m_LocalPosition: {x: -71.2, y: 0, z: -97.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256460056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!154 &1687632875
+--- !u!154 &1141893807
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687632873}
+  m_GameObject: {fileID: 1141893805}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -537,13 +537,13 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 9287092483d54db45b202e6c3bfcd5b9, type: 2}
   m_EnableTreeColliders: 1
---- !u!218 &1687632876
+--- !u!218 &1141893808
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687632873}
+  m_GameObject: {fileID: 1141893805}
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 9287092483d54db45b202e6c3bfcd5b9, type: 2}
@@ -683,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 1859480811}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 51, z: 0}
   m_LocalScale: {x: 202, y: 140, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -795,11 +795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.736
+      value: 53.99
       objectReference: {fileID: 0}
     - target: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.5
+      value: -52.7
       objectReference: {fileID: 0}
     - target: {fileID: 9068464320385062742, guid: 24d39e685fab5884d96fb529882c8f19, type: 3}
       propertyPath: m_LocalRotation.w
