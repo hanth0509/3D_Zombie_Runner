@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8752486177186016657}
   - component: {fileID: 5898275789483786162}
+  - component: {fileID: 2826213406000964794}
   m_Layer: 0
   m_Name: Battery Pickup
   m_TagString: Untagged
@@ -182,6 +183,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.5
   m_Center: {x: -0.43, y: 0.6, z: 0}
+--- !u!114 &2826213406000964794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798376600747636796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251d7860d72fab144b3b853314f892fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BatteryPickup
+  restoreAngle: 90
+  addIntensity: 10
 --- !u!1001 &1037249182333491241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +251,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5080893465098323438, guid: 14a1869f22a2cc54b8beb3ed04be5150, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490687433163611297, guid: 14a1869f22a2cc54b8beb3ed04be5150, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
