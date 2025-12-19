@@ -20,6 +20,7 @@ public class EnemyAttack : MonoBehaviour
             return;
         }
         target.TakeDamage(damage);
-        Debug.Log("Bang bang");
+        // Debug.Log("Bang bang");
+        target.GetComponent<DisplayDamage>().ShowDamageImpact();
     }
 }
