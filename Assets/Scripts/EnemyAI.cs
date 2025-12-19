@@ -3,9 +3,6 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
-    Transform target;
-
-    [SerializeField]
     float chaseRange = 5f;
 
     [SerializeField]
@@ -14,11 +11,13 @@ public class EnemyAI : MonoBehaviour
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false; // The enemy is provoked
     EnemyHealth health;
+    Transform target;
 
     void Start()
     {
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
+        target = FindFirstObjectByType<PlayerHealth>().transform;
     }
 
     // Update is called once per frame

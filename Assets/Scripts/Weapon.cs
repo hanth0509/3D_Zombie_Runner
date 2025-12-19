@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +32,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     float timeBetweenShots = 0.5f;
+
+    [SerializeField]
+    TextMeshProUGUI ammoText;
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
@@ -59,11 +63,18 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
+        DisplayAmmo();
         if (isShooting && Time.time >= nextFireTime && canShoot == true)
         {
             StartCoroutine(Shoot());
             nextFireTime = Time.time + fireRate;
         }
+    }
+
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetCurentAmount(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 
     private void OnShootStarted(InputAction.CallbackContext ctx)
