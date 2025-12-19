@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &423754106445503695
+--- !u!1 &110236352741244740
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3717089230778192960}
-  - component: {fileID: 5285587657253778455}
-  - component: {fileID: 5386480347838130164}
+  - component: {fileID: 3136904691714930549}
+  - component: {fileID: 5750119034816742313}
+  - component: {fileID: 1810572682549344525}
+  - component: {fileID: 5613097674296298139}
   m_Layer: 0
-  m_Name: Flashlight
+  m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3717089230778192960
+--- !u!4 &3136904691714930549
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423754106445503695}
+  m_GameObject: {fileID: 110236352741244740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.21, z: 0.838}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!108 &5285587657253778455
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &5750119034816742313
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423754106445503695}
+  m_GameObject: {fileID: 110236352741244740}
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 1, g: 0.95383465, b: 0.3254717, a: 1}
-  m_Intensity: 3
-  m_Range: 20
+  m_Color: {r: 0.8117647, g: 0.80727047, b: 0.172549, a: 1}
+  m_Intensity: 10
+  m_Range: 30
   m_SpotAngle: 70
-  m_InnerSpotAngle: 2
+  m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -98,13 +99,13 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &5386480347838130164
+--- !u!114 &1810572682549344525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423754106445503695}
+  m_GameObject: {fileID: 110236352741244740}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
@@ -127,3 +128,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &5613097674296298139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110236352741244740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16410703f8926146952e26efd7553c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashLightSystem
+  lightDecay: 0.1
+  angleDecay: 1
+  minimumAngle: 40
