@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91aef62ca9acd6439c9995098a7f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  target: {fileID: 0}
   chaseRange: 10
   turnSpeed: 5
 --- !u!114 &5399793683830625241
@@ -194,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c23bbc4642024144a66af11262ad8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 40
+  damage: 5
 --- !u!1001 &7990037237848073551
 PrefabInstance:
   m_ObjectHideFlags: 0

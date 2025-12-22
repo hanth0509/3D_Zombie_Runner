@@ -3,30 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource audioSource;
+    [Header("Main Menu Buttons")]
+    public GameObject startButton;
+    public GameObject settingButton;
+    public GameObject quitButton;
 
-    [SerializeField]
-    private AudioClip menuMusic;
+    [Header("Panels")]
+    public GameObject settingsPanel;
 
     private void Start()
     {
-        // Tự động tìm AudioSource nếu chưa gán
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
-
-        // Phát nhạc menu
-        PlayMenuMusic();
-    }
-
-    private void PlayMenuMusic()
-    {
-        if (audioSource != null && menuMusic != null)
-        {
-            audioSource.clip = menuMusic;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+        settingsPanel.SetActive(false);
     }
 
     public void StartGame()
@@ -36,7 +23,24 @@ public class Menu : MonoBehaviour
 
     public void OpenSettings()
     {
-        Debug.Log("Settings clicked (chưa làm)");
+        // Ẩn menu chính
+        startButton.SetActive(false);
+        settingButton.SetActive(false);
+        quitButton.SetActive(false);
+
+        // Hiện panel settings
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        // Hiện lại menu chính
+        startButton.SetActive(true);
+        settingButton.SetActive(true);
+        quitButton.SetActive(true);
+
+        // Ẩn settings
+        settingsPanel.SetActive(false);
     }
 
     public void QuitGame()
