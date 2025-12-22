@@ -35,6 +35,13 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI ammoText;
+
+    [SerializeField]
+    private AudioSource shootingAudio;
+
+    [SerializeField]
+    private AudioClip shootingClip;
+
     private MyInputs inputs;
     private bool isShooting;
     private float nextFireTime = 0f;
@@ -56,6 +63,7 @@ public class Weapon : MonoBehaviour
 
     private void OnDisable()
     {
+        StopAllCoroutines();
         inputs.Player.Shoot.started -= OnShootStarted;
         inputs.Player.Shoot.canceled -= OnShootCanceled;
         inputs.Disable();
@@ -93,11 +101,29 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.GetCurentAmount(ammoType) > 0)
         {
             ammoSlot.ReduceCurrentAmmo(ammoType); // Reduce ammo count by 1
+            PlayShootSound();
             PlayMuzzleFlash();
             ProcessRaycast();
         }
         yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
+    }
+
+    private void PlayShootSound()
+    {
+        if (shootingAudio == null)
+        {
+            Debug.LogError("shootingAudio NULL");
+            return;
+        }
+
+        if (shootingClip == null)
+        {
+            Debug.LogError("shootingClip NULL");
+            return;
+        }
+
+        shootingAudio.PlayOneShot(shootingClip);
     }
 
     private void PlayMuzzleFlash()
