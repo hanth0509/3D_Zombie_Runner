@@ -5,6 +5,9 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private float hitPoints = 100f;
+
+    [SerializeField]
+    private int scoreValue = 10;
     bool isDead = false;
 
     public bool IsDead()
@@ -28,5 +31,11 @@ public class EnemyHealth : MonoBehaviour
             return;
         isDead = true;
         GetComponent<Animator>().SetTrigger("die");
+
+        // Thêm điểm khi zombie chết
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddScore(scoreValue);
+        }
     }
 }
